@@ -1,0 +1,5 @@
+# created when the scripts run
+outputs/
+figures/
+__pycache__/
+*.pyc
