@@ -213,4 +213,17 @@ plt.tight_layout()
 plt.savefig(os.path.join(FIG, 'fig09_silhouette_hdbscan.png'), dpi=300, bbox_inches='tight')
 plt.close()
 print(f"fig09 saved ({time.time()-t0:.0f}s)", flush=True)
+import matplotlib.image as mpimg
+import os
+
+fig, axes = plt.subplots(1, 2, figsize=(10, 5))
+paths = ['figures/fig03_umap_scatter.png', 'figures/fig06_hdbscan_dist.png']
+for ax, p in zip(axes, paths):
+    img = mpimg.imread(p)
+    ax.imshow(img)
+    ax.axis('off')
+plt.tight_layout()
+plt.savefig('combined_fig03_fig06.png', dpi=300, bbox_inches='tight')
+plt.close()
 print("ALL DONE")
+
